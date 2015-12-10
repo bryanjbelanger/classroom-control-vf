@@ -25,6 +25,15 @@ filebucket { 'main':
 # Make filebucket 'main' the default backup location for all File resources:
 File { backup => 'main' }
 
+# Randomize enforcement order to help understand relationships
+ini_setting { 'random ordering':
+  ensure  => present,
+  path    => "${settings::confdir}/puppet.conf",
+  section => 'agent',
+  setting => 'ordering',
+  value   => 'title-hash',
+}
+
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
