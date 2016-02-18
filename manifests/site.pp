@@ -16,14 +16,8 @@
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
 
-# Define filebucket 'main':
-filebucket { 'main':
-  server => 'puppetfactory.puppetlabs.vm',
-  path   => false,
-}
-
-# Make filebucket 'main' the default backup location for all File resources:
-File { backup => 'main' }
+# Disable filebucket by default for all File resources:
+File { backup => false }
 
 # Randomize enforcement order to help understand relationships
 ini_setting { 'random ordering':
