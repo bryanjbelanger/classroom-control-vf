@@ -9,7 +9,7 @@ to the `$modulepath` by the `environment.conf` file so that Puppet can use modul
 from this directory.
 
 Adding modules to the `Puppetfile` will manage them in the standard `modules`
-directory using r10k.
+directory using r10k or PE Code Manager.
 
 ## Starter code
 
