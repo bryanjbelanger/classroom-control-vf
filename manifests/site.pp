@@ -54,7 +54,7 @@ node default {
     content => "Today I learned what it means to be a puppet.\n",
   }
   exec { 'cowsay':
-    command => 'cowsay 'Welcome to ${::fqdn}!' > /etc/motb',
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motb",
     path => '/usr/local/bin',
     creates => '/etc/motd',
   }
