@@ -49,8 +49,5 @@ node default {
   file {'/etc/motd':
     ensure ==> file,
     content ==> 'John wuz here',
-    owner ==> 'root',
-    group ==> 'root',
-    mode ==> '0644',
   }
 }
