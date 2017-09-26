@@ -46,3 +46,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
+file {'/etc/motd':
+   content => 'John wuz here',
+}
