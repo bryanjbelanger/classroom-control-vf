@@ -58,4 +58,7 @@ mode => '0644',
 content => "Can a brotha get a table dance\n",
 }
 
-exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":}
+exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"':
+	path => '/usr/local/bin',
+	creates => '/ect/motd',
+}
