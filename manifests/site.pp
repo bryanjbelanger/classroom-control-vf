@@ -8,7 +8,7 @@
 # if you use the console and don't define any other nodes in site.pp. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
 # node definitions.)
-
+#newcomment
 ## Active Configurations ##
 
 # PRIMARY FILEBUCKET
