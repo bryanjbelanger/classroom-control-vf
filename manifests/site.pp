@@ -46,11 +46,11 @@ node default {
   include role::classroom
   notify { "Hello, my name name is ${::hostname}": }
   
-  file { '/etc/motd':
-    ensure => file,
-    owner => 'root',
-    content => "I NEED A HERO!!!\n",
-  }
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  owner => 'root',
+  #  content => "I NEED A HERO!!!\n",
+  #}
   
   exec { 'cowsay \'Welcome to ${::fqdn}!\' > /etc/motd':
     path => '/usr/local/bin',
