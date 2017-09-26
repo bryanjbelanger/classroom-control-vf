@@ -51,6 +51,6 @@ node default {
       owner => 'root',
       group => 'root',
       mode => '0644',
-      content => "I want the Cow back!!\n",
+      content => "_________________ /n| I Learned Puppet with the COW! |/n ----------------- /n      \   ^__^/n       \  (oo)\_______/n          (__)\       )\/\/n              ||----w |/n              ||     ||/n",
     }
 }
