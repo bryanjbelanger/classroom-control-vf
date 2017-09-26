@@ -29,13 +29,7 @@ ini_setting { 'random ordering':
   setting => 'ordering',
   value   => 'title-hash',
   
-file { '/etc/motd':
-  ensure => file,
-  owner => 'root',
-  group => 'root',
-  content => 'Today is Tuesday',
-  }
-  
+ 
 }
 
 # DEFAULT NODE
@@ -53,4 +47,12 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+file { '/etc/motd': 
+  ensure => file,
+  owner => 'root',
+  group => 'root',
+  content => 'Today is Tuesday',
+  } 
+  
 }
