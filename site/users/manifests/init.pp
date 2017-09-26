@@ -1,0 +1,2 @@
+user { 'fundamentals': ensure => present,
+}
