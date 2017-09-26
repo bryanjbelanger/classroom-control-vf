@@ -1,6 +1,7 @@
 ## site.pp ##
 
-# Here is a new comment.1
+# Here is a new comment
+
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
@@ -54,4 +55,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  file { '/etc/motd':
+    ensure => file,
+    content => 'I learn Puppet!',
+  }
 }
