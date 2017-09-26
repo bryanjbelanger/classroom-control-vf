@@ -45,4 +45,13 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  notify { "Hello, my name name is ${{::hostname}": }
+  file { '/etc/motd':
+    ensure => file,
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+    content => "Today I learned means to be a puppet.\n",
+  }
+  
 }
