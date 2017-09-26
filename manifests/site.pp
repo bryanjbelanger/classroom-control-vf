@@ -46,13 +46,13 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   notify { "Hello, my name name is ${::hostname}": }
-  file { '/etc/motd':
-    ensure => file,
-    owner => 'root',
-    group => 'root',
-    mode => '0644',
-    content => "Today I learned what it means to be a puppet.\n",
-  }
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  owner => 'root',
+  #  group => 'root',
+  #  mode => '0644',
+  #  content => "Today I learned what it means to be a puppet.\n",
+  #}
   exec { 'cowsay':
     command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motb",
     path => '/usr/local/bin',
