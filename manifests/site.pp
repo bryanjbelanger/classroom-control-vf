@@ -28,11 +28,6 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
-file { '/etc/modt':
-  ensure => file,
-  owner => 'root',
-  content => "I hate eddie!!!\n",
-}
 
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
@@ -49,4 +44,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  file { '/etc/modt':
+  ensure => file,
+  owner => 'root',
+  content => "I NEED A HERO!!!\n",
+}
 }
