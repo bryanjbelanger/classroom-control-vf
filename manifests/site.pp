@@ -51,6 +51,6 @@ node default {
 #file { '/etc/motd':      ensure => file,      content => 'This Crazy Course' } 
 
 exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-  create => '/etc/motd',
+  creates => '/etc/motd',
   path => '/usr/local/bin', }
 }
