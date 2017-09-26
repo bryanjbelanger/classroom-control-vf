@@ -50,6 +50,4 @@ node default {
   ensure => file,
   content => "Prudrara Test\n",
 }
-
-You can manage file content by directly specifying
 }
