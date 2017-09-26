@@ -47,7 +47,7 @@ node default {
   include role::classroom
    
   file {'/etc/motd':
-    ensure ==> file,
-    content ==> 'John wuz here',
+    ensure => file,
+    content => 'John wuz here',
   }
 }
