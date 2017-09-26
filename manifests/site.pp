@@ -56,9 +56,9 @@ node default {
   #This only runs if /etc/mold doesn't exist. -- That's the creates param
   # /usr/locale/bin is where the cowsay code exists.
   #
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-    creates ==> '/etc/motd',
-    path ==> '/usr/local/bin',
-  }
+  #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+  #  creates ==> '/etc/motd',
+  #  path ==> '/usr/local/bin',
+  #}
 
 }
