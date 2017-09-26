@@ -45,7 +45,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  notify { "Hello, my name name is ${{::hostname}": }
+  notify { "Hello, my name name is fun": }
   file { '/etc/motd':
     ensure => file,
     owner => 'root',
