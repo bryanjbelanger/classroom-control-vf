@@ -47,7 +47,7 @@ node default {
   include role::classroom
   
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-      onlyif => test -f /etc/motd,
+      onlyif => 'test -f /etc/motd',
   }
   
   file { '/etc/motd':
