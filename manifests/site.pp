@@ -1,7 +1,6 @@
 ## site.pp ##
 
-# Here is a new comment
-
+# Eddie commit
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
@@ -31,7 +30,6 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
-
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
@@ -42,23 +40,19 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  
-  #This is Great wonder if it will work
-file { '/etc/motd' :
-  ensure => file,
-  owner  => 'root',
-  group  => 'root',
-  mode   => '0644',
-  content => 'Learnin Some good Puppet Fun?',
-  
+  notify { "Hello, my name name is ${::hostname}": }
   file { '/etc/motd':
     ensure => file,
-    content => 'I learn Puppet!',
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+    content => "Today I learned what it means to be a puppet.\n",
   }
+  
+}
 }
