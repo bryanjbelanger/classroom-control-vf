@@ -16,6 +16,7 @@
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
 
+
 # Disable filebucket by default for all File resources:
 File { backup => false }
 
@@ -37,6 +38,8 @@ ini_setting { 'random ordering':
 # definition. If there are no other nodes in this file, classes declared here
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
+
+# Puppet is very cool!
 
 node default {
   # This is where you can declare classes for all nodes.
