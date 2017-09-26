@@ -44,5 +44,5 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  /etc/motd
+ file { '/etc/motd':  ensure  => file,  owner   => 'root',  group   => 'root',  mode    => '0644',  content => "what up in puppet\n",}
 }
