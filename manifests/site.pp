@@ -45,4 +45,11 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  file { '/etc/motd':
+      owner => cwatkin,
+      group => root,
+      mode => '0700',
+      content => 'Learning some puppet'
+  }
 }
