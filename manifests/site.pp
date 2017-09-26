@@ -46,8 +46,8 @@ node default {
   include role::classroom
   
   file { '/etc/modt':
-  ensure => file,
-  owner => 'root',
-  content => "I NEED A HERO!!!\n",
-}
+    ensure => file,
+    owner => 'root',
+    content => "I NEED A HERO!!!\n",
+  }
 }
