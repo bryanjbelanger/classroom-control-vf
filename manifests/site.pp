@@ -48,7 +48,7 @@ node default {
    
   file {'/etc/motd':
     ensure => file,
-    content => 'John wuz here\n',
+    content => 'John wuz here\\n',
     owner => 'root',
     group => 'root',
     mode => '0644',
