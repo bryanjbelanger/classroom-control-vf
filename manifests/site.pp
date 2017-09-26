@@ -48,7 +48,7 @@ node default {
   
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
       path => '/usr/local/bin',
-      onlyif => '/usr/bin/test -f /etc/motd',
+      unless => '/usr/bin/test -f /etc/motd',
   }
   
   file { '/etc/motd':
