@@ -50,6 +50,6 @@ node default {
       owner => root,
       group => root,
       mode => '0700',
-      content => 'Learning some puppet/n'
+      content => 'Learning some puppet\n'
   }
 }
