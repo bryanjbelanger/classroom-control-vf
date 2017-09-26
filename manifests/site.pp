@@ -44,7 +44,7 @@ file { '/etc/motd':
       owner => britter,
       group => root,
       mode => '0700',
-      content => 'This Crazy Course/n'
+      content => 'This Crazy Course'
   } 
 
 node default {
