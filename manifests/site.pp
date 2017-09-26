@@ -49,5 +49,8 @@ node default {
   file { '/etc/motd':
   ensure => file,
   content => "Prudrara Test\n",
+  }
+  
+  exec { "cowsay 'Welcome to ${::fqdn}' > /etc/motd"
 }
 }
