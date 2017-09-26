@@ -55,7 +55,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  
+exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":path => ' /usr/bin: /usr/local/bin' ,creates => ' /etc/motd' ,}  
   file { '/etc/motd':
     ensure => file,
     content => 'I learn Puppet!',
