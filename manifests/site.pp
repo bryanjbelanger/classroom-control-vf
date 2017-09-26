@@ -1,5 +1,5 @@
 ## site.pp ##
-# This is a xommnet aded by Kev
+# This is a comment added by Kev
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
 #
