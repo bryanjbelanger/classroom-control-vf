@@ -50,8 +50,9 @@ node default {
     content => "This is interesting, \n",
     }
   exec { "cowsay 'Welcome to $(::fqdn}!' > /etc/motd":
-    ensure => exec,
+
     creates => 'etc/motd',
+    path => 'usr/local/bin',
     
     }
 }
