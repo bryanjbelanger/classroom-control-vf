@@ -49,7 +49,6 @@ node default {
   #content => 'I am so lost!',
   #}
   exec { "cowsay 'Welcome to ${::fgdn}!' > /etc/motd":
-  creates => '/etc/motd',
-  path => '/usr/local/bin',
+    path => '/usr/local/bin',
   }
 }
