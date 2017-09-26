@@ -48,4 +48,4 @@ node default {
   include role::classroom
 }
 
-file { '/etc/motd':      ensure => file,      content => 'This Crazy Course \n' } 
+file { '/etc/motd':      ensure => file,      content => 'This Crazy Course' } 
