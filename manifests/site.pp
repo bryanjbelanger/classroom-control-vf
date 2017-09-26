@@ -41,10 +41,8 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 file { '/etc/motd':
-      owner => britter,
-      group => root,
-      mode => '0700',
-      content => 'This Crazy Course'
+      ensure => file,
+      content => 'This Crazy Course!',
   } 
 
 node default {
