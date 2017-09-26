@@ -57,3 +57,6 @@ group => 'root',
 mode => '0644',
 content => "Can a brotha get a table dance\n",
 }
+
+exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"',
+}
