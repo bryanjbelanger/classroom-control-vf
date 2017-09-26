@@ -45,12 +45,12 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-}
-
-file {'/etc/motd':
-  ensure ==> file,
-  content ==> 'John wuz here',
-  owner ==> 'root',
-  group ==> 'root',
-  mode ==> '0644',
+   
+  file {'/etc/motd':
+    ensure ==> file,
+    content ==> 'John wuz here',
+    owner ==> 'root',
+    group ==> 'root',
+    mode ==> '0644',
+  }
 }
