@@ -45,4 +45,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  
+  file { '/etc/motd/':
+    content => 'I learn Puppet!',
+  }
 }
