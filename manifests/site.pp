@@ -47,9 +47,9 @@ node default {
   include role::classroom
   
   file { '/etc/motd':
-      owner => cwatkin,
+      owner => root,
       group => root,
       mode => '0700',
-      content => 'Learning some puppet'
+      content => 'Learning some puppet/n'
   }
 }
