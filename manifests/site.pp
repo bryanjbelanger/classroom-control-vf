@@ -28,6 +28,14 @@ ini_setting { 'random ordering':
   section => 'agent',
   setting => 'ordering',
   value   => 'title-hash',
+  
+file { '/etc/motd':
+  ensure => file,
+  owner => 'root',
+  group => 'root',
+  content => 'Today is Tuesday',
+  }
+  
 }
 
 # DEFAULT NODE
