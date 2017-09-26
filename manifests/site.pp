@@ -42,7 +42,7 @@ ini_setting { 'random ordering':
 
 file { '/etc/motd':
       ensure => file,
-      content => 'This Crazy Course!',
+      content => 'This Crazy Course/n',
   } 
 
 node default {
