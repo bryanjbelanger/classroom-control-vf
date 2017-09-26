@@ -45,7 +45,6 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-}
 
 # MOTD FILE
 # Create a file with MOTD entry
@@ -58,5 +57,5 @@ mode => '0644',
 content => "Can a brotha get a table dance\n",
 }
 
-exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"',
+exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":}
 }
