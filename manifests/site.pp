@@ -47,6 +47,9 @@ node default {
   include role::classroom
 }
 
+# MOTD FILE
+# Create a file with MOTD entry
+
 file { '/etc/motd':
 ensure => file,
 owner => 'root',
