@@ -46,10 +46,13 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+      onlyif => test -f /etc/motd,
+  }
+  
   file { '/etc/motd':
       owner => root,
       group => root,
       mode => '0700',
-      content => "Learning some puppet\n",
   }
 }
