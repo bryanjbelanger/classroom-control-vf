@@ -46,5 +46,4 @@ node default {
   file {'/etc/motd':
      content => "Learned how to change the contents of a file!!\n",
   }
-  exec  { "/usr/local/bin/cowsay 'Welcome to ${::fqdn}!' >/etc/motd": }
-}
+
