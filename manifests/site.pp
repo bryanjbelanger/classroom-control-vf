@@ -43,8 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  class { '/etc/motd':
-    ensure => class,
+    path => "/etc/motd",
     owner => 'root',
     group => 'root',
     content => "This is interesting, \n",
