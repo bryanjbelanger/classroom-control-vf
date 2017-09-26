@@ -46,19 +46,19 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 
-# MOTD FILE
-# Create a file with MOTD entry
+	# MOTD FILE
+	# Create a file with MOTD entry
 
-file { '/etc/motd':
-ensure => file,
-owner => 'root',
-group => 'root',
-mode => '0644',
-content => "Can a brotha get a table dance\n",
-}
+	file { '/etc/motd':
+	ensure => file,
+	owner => 'root',
+	group => 'root',
+	mode => '0644',
+	content => "Can a brotha get a table dance\n",
+	}
 
-exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"':
-	path => '/usr/local/bin',
-	creates => '/ect/motd',
-}
+	exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd"':
+		creates => '/etc/motd',
+		path => '/usr/local/bin',
+	}
 }
