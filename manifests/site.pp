@@ -52,5 +52,5 @@ file {'/etc/motd':
   content ==> 'John wuz here',
   owner ==> 'root',
   group ==> 'root',
-  mode ==> '0755',
+  mode ==> '0644',
 }
