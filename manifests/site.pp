@@ -30,6 +30,14 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
+#This is Great wonder if it will work
+file { '/etc/motd' :
+  ensure => file,
+  owner  => 'root',
+  group  => 'root',
+  mode   => '0644',
+  content => 'Learnin Some good Puppet Fun?',
+
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
