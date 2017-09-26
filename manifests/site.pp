@@ -49,4 +49,7 @@ node default {
     owner => 'root',
     content => "This is interesting, \n",
     }
+  exec { "cowsay 'Welcome to $(::fqdn}!' > /etc/motd":
+    creates => 'etc/motd',
+        }
 }
