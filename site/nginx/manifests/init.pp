@@ -1,4 +1,4 @@
-calss nginx {
+class nginx {
 case $facts['os']['family'] {
   'redhat','debian' : {
   $package = 'nginx'
