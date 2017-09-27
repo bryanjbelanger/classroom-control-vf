@@ -40,11 +40,11 @@ class nginx {
     group => 'root',
     mode => '0755',
     source => 'puppet:///modules/nginx/default.conf',
+    notify => Service['nginx'],
+    require => Package['nginx'],
   }
   service { 'nginx':
     ensure => running,
     enable => true,
-    require => Package['nginx'],
-    notify => Service['nginx'],
   }
 }
