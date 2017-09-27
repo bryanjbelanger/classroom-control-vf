@@ -38,5 +38,9 @@ class nginx {
     group => 'root',
     mode => '0755',
     source => 'puppet:///modules/nginx/default.conf',
-  }  
+  }
+  service { 'nginx':
+    ensure => running,
+    enable => true,
+  }
 }
