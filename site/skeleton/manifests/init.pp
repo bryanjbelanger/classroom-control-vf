@@ -1,15 +1,15 @@
 class skeleton {
-    file { '/etc/skel':
-    ensure => directory,
-    owner => 'root',
-    group => 'root',
-    mode => '0755',
-}
+  # create a directory
+  file { '/etc/skel':
+    ensure => 'directory',
+  }
 
-file { '/etc/skel/.bashrc':
-   ensure => file,
-   owner => 'root',
-   group => 'root',
-   mode => '0644',
-   source => 'puppet:///modules/skeleton/bashrc',
+  # a fuller example, including permissions and ownership
+  file { '/etc/skel/.bashrc':
+    ensure => 'file',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0664',
+    source => 'puppet:///modules/skeleton/.bashrc'
+  }
 }
