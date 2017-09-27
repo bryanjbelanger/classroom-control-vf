@@ -62,5 +62,5 @@ exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
  creates => ' /etc/motd' , 
 
 include users
-   
+#   
 }
