@@ -1,5 +1,5 @@
 class memcached {
-  package { 'memcached:
+  package { 'memcached':
     ensure => present,
   }
   
@@ -11,6 +11,7 @@ class memcached {
   
   service { 'memcached':
     ensure => running,
+    enabler => true,
     subscribe => File['/etc/sysconfig/memcached'],
   }
 }
