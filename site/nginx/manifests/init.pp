@@ -31,6 +31,8 @@ class nginx {
     owner => 'root',
     group => 'root',
     mode => '0755',
+    require => Package['nginx'],
+    notify => Service['nginx'],
   }  
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
@@ -42,5 +44,7 @@ class nginx {
   service { 'nginx':
     ensure => running,
     enable => true,
+    require => Package['nginx'],
+    notify => Service['nginx'],
   }
 }
