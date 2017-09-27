@@ -7,6 +7,6 @@ if [ -f /etc/bashrc ]; then
 # export SYSTEMD_PAGER=
 # User specific aliases and functions
 
-export PATH=$path:/usr/local/bin
+export PATH=$PATH:/usr/local/bin
 
 cowsay 'Hi there!'
