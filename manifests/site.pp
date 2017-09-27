@@ -48,7 +48,7 @@ node default {
   
   if $facts['is_virtual'] == true {
     $vmname = capitalize($facts['virtual'])
-    notice("This is a ${vmname} VM.")
+    notify{"This is a ${vmname} VM.":}
   }
  
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
