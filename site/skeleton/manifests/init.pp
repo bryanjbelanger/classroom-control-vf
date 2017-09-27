@@ -1,7 +1,7 @@
 class skeleton {
 
   file {'/etc/skel':
-    ensure => 'file',
+    ensure => 'directory',
     type => 'directory',
   }
 }
