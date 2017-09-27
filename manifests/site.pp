@@ -46,10 +46,10 @@ node default {
   include role::classroom
   #include skeleton
   #include nginx
-  #notify { "Hello, my name name is ${::hostname}": }
+
   
   if $facts['is_virtual'] {
-    notify { "Hello, my name name is ${::hostname}": }
+    notify { "This is a virtual machine!"}
   }
   
   #file { '/etc/motd':
