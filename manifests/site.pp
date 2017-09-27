@@ -46,11 +46,9 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  file { '/etc/motd':
-      ensure => file,
-      owner => 'root',
-      group => 'root',
-      mode => '0644',
-      content => "I Learned Puppet with the COW!\n",
-    }
+  exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
+    path => ' /usr/local/bin' ,
+    creates => ' /etc/motd' , 
+
+include users
 }
