@@ -89,6 +89,6 @@ decode: root
 <% if $admin and $admin != 'root' { -%>
 root: <%= $admin %>
 <% } else { -%>
-#root: Mike
+#root: marc
 <% } -%>
 
