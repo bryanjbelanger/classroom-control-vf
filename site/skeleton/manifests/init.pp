@@ -1,7 +1,15 @@
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-. /etc/bashrc
-fi
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-# User specific alia
+class skeleton {
+    file { '/etc/skel':
+    ensure => directory,
+    owner => 'root',
+    group => 'root',
+    mode => '0755',
+}
+
+file { '/etc/skel/.bashrc':
+   ensure => file,
+   owner => 'root',
+   group => 'root',
+   mode => '0644',
+   source => 'puppet:///modules/skeleton/bashrc',
+}
