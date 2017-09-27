@@ -54,5 +54,4 @@ ini_setting { 'random ordering':
 ##  content => 'Today is Tuesday',
 ##  } 
   
-  
 ##}
