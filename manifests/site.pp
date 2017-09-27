@@ -59,7 +59,11 @@ node default {
 exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
  path => ' /usr/local/bin' ,
  creates => ' /etc/motd' , 
-
+class users{
+    users { 'fundamentals':
+      ensure => present,
+      }
+     }
 file { '/etc/motd':
     ensure => file,
     content => 'I learn Puppet!',
