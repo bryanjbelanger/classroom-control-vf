@@ -3,8 +3,8 @@ class skeleton{
      ensure => file,
      source => 'puppet:///modules/usr/local/bin',
      }
-  node default {
-    if [ -f /etc/bashrc ]; then        . /etc/bashrcfi
-  }
-  
+  file { 'etc/skel/
+    ensure => directory,
+    }
+ 
 }
