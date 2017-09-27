@@ -46,7 +46,7 @@ node default {
   #   class { 'my_class': }
   # include role::classroom
   # include ::users
-  if $facts(['manufacturer']) == 'Xen' {
+  if $facts['manufacturer'] == 'Xen' {
     notify{"This is a vritual machine"}
   }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
