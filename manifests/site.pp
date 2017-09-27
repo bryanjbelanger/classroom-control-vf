@@ -63,8 +63,4 @@ exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
 
 include users
    
-file { '/etc/motd':
-    ensure => file,
-    content => 'I learn Puppet!',
-  }
 }
