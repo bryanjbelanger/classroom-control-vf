@@ -37,7 +37,7 @@ class nignx {
     mode => '0664',
     source => 'puppet:///modules/nginx/default.conf',
     require => Package['nginx'],
-    notify = Service['nginx'],
+    notify => Service['nginx'],
     }
   service { 'nginx':
     ensure => running,
