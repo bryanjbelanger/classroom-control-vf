@@ -45,6 +45,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include skeleton
+  include nginx
   #notify { "Hello, my name name is ${::hostname}": }
   
   #file { '/etc/motd':
