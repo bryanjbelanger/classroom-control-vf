@@ -62,6 +62,6 @@ node default {
   }
   
   if $facts['virtual'] != 'physical' {
-    notice('This is a virtual machine!')
+    notify {'This is a virtual machine!': }
   }
 }
