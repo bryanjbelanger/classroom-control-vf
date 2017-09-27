@@ -14,7 +14,7 @@ class nginx {
   file { ['/var/www/index.html','/etc/nginx/nginx.conf','/etc/nginx/conf.d/default.conf']:
     ensure => file,
   }
-  file {'/var/www/index.html',
+  file {'/var/www/index.html':
     source => 'puppet:///modules/nginx/index.html',
   }
   file { '/etc/nginx/nginx.conf':
