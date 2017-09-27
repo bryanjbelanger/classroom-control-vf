@@ -46,14 +46,13 @@ node default {
   #   class { 'my_class': }
   include role::classroom 
   
- file { '/etc/motd':
-   ensure => file,
-    owner => 'root',
-    content => "This isn't working, \n",
-    }
-  
-  exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
+ # file { '/etc/motd':
+ #  ensure => file,
+ #   owner => 'root',
+ #   content => "This isn't working, \n",
+ #   }
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    path => '/usr/bin:/usr/local/bin',
     creates => '/etc/motd',
-    path => '/usr/local/bin',
-    }
+   }
 }
