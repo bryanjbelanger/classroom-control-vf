@@ -1,5 +1,5 @@
 #Add conntent
-file { '/etc/skel':
+file { '/etc/skel/.bashrc':
 ensure => file,
 owner => 'root',
 group => 'root',
