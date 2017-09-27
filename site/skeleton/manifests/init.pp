@@ -1,8 +1,11 @@
-#Add conntent
-file { '/etc/skel/.bashrc':
-ensure => file,
-owner => 'root',
-group => 'root',
-mode => '0440',
-source => 'puppet:///modules/sudo/.baschrc',
+class skeleton {
+
+  file { 'etc/skel':
+    ensure => directory,
+  }
+  
+  file {'etc/skel/.bashrc':
+    ensure = > file,
+    source => 'puppet:///modules/sudo/baschrc',
+  }
 }
