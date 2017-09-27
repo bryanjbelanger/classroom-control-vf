@@ -46,7 +46,11 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  
+  if $facts['is_virtual'] == true {
+    $vmname = capitalize($facts['virtual'])
+    notice{"This is a ${vmname} VM."},
+  }
+ 
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
       path => '/usr/local/bin',
       unless => '/usr/bin/test -f /etc/motd',
