@@ -44,7 +44,9 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
+  #include role::classroom
+  
+  include ::users
 
 	# MOTD FILE
 	# Create a file with MOTD entry
