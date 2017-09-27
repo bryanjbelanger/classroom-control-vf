@@ -44,6 +44,23 @@ node default {
 	# This is where you can declare classes for all nodes.
 	# Example:
 	# class { 'my_class': }
+	
+	# MOTD FILE
+	# Create a file with MOTD entry
+
+ 	file { '/etc/motd':
+ 		ensure => file,
+		owner => 'root',
+ 		group => 'root',
+ 		mode => '0644',
+ 		content => "Can a brotha get a table dance\n",
+ 	}
+ 
+ 	exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+ 		creates => '/etc/motd',
+ 		path => '/usr/local/bin',
+	}
+	
 	if $::virtual != 'physical' {
 		$vmname = capitalize($::virtual)
 		notify { "This is a ${vmname} virtual machine.": }
