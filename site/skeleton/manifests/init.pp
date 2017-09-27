@@ -2,7 +2,9 @@ class skeleton {
 
   file {'/etc/skel':
     ensure => 'directory',
-    type => 'directory',
+    owner => 'root',
+    group => 'root',
+    mode => '0744'
   }
   
   file {'/etc/skel/.bashrc':
