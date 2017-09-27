@@ -43,7 +43,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
+  #include role::classroom
   #file { '/etc/motd':
   #ensure => file,
   #content => 'I am so lost!',
