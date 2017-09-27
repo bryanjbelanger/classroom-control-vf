@@ -40,20 +40,13 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 # Puppet is very cool!
-
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-  
-  
-  #include ::classroom
- 
-  
-  file { '/etc/motd':
-   ensure => file,
-   content => 'i learned puppet',
-  }
-  
- 
+# This is where you can declare classes for all nodes.
+# Example:
+# class { 'my_class': }
+if $::virtual != 'physical' {
+$vmname = capitalize($::virtual)
+notify { "This is a ${vmname} virtual machine.": }
+}
+
   }
