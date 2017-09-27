@@ -1,5 +1,1 @@
-class users {
-     users { 'fundamentals':
-      ensure => present,
-      }
-}
+include ::users
