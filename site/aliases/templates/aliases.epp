@@ -1,4 +1,3 @@
-ple file: aliases/templates/aliases.epp
 #
 # Aliases in this file will NOT be expanded in the header from
 # Mail, but WILL be visible over networks or from /bin/mail.
@@ -90,6 +89,6 @@ decode: root
 <% if $admin and $admin != 'root' { -%>
 root: <%= $admin %>
 <% } else { -%>
-#root: marc
+#root: Mike
 <% } -%>
 
