@@ -6,6 +6,12 @@ class nginx {
     mode => '0644',
   }
 
+  $user_service_runs_as = $facts['os']['family'] ? {
+    'redhat' => 'nginx',
+    'debian' => 'www-data',
+    'windows' => 'nobody',
+  }
+
   package {'nginx':
     ensure => present,
   }
@@ -22,7 +28,7 @@ class nginx {
   file { '/etc/nginx/nginx.conf':
     ensure => file,
     #source => 'puppet:///modules/nginx/nginx.conf',
-    content => epp(ngnix/nginx.conf.epp, {user_service_runs_as => 'www-data'}),
+    content => epp(ngnix/nginx.conf.epp, {user_service_runs_as => $user_service_runs_as}),
     require => Package['nginx'],
     notify => Service['nginx'],
   }
