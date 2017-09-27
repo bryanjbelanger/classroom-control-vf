@@ -47,7 +47,8 @@ node default {
   #   class { 'my_class': }
   
   
-  include ::users
+  include ::classroom
+  include ::ngix
   
   
   file { '/etc/motd':
