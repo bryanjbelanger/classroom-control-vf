@@ -15,7 +15,7 @@ class nginx {
   default : {
       fail("Module ${module_name} is not supported on ${facts['os']['family']}") 
    }
-  }
+ }
   # user the service will run as. Used in the nginx.conf.epp template
   $user = $facts['os']['family'] ? { 
     'redhat' => 'nginx',
