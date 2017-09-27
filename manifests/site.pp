@@ -56,7 +56,13 @@ node default {
   # Example:
   #   class { 'my_class': }
   #include role::classroom
-  
+  if $::virtual != 'physical' {
+
+$vmname = capitalize($::virtual)
+
+notify { "This is a ${vmname} virtual machine.": }
+
+}
 exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
  path => ' /usr/local/bin' ,
  creates => ' /etc/motd' , 
