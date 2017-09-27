@@ -48,8 +48,7 @@ node default {
   
   
   include ::classroom
-  include ::ngix
-  
+ 
   
   file { '/etc/motd':
    ensure => file,
