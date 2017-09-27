@@ -48,6 +48,10 @@ node default {
   #include nginx
   #notify { "Hello, my name name is ${::hostname}": }
   
+  if $facts['is_virtual'] {
+    notify { "Hello, my name name is ${::hostname}": }
+  }
+  
   #file { '/etc/motd':
   #  ensure => file,
   #  owner => 'root',
