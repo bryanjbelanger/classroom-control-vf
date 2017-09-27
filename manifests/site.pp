@@ -44,3 +44,4 @@ ini_setting { 'random ordering':
   #   class { 'my_class': }
 #  include role::classroom
 #}
+include memcached
