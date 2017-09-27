@@ -21,7 +21,8 @@ class nginx {
   
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    source => 'puppet:///modules/nginx/nginx.conf',
+    #source => 'puppet:///modules/nginx/nginx.conf',
+    content => epp(ngnix/nginx.conf.epp, {user_service_runs_as => 'www-data'}),
     require => Package['nginx'],
     notify => Service['nginx'],
   }
