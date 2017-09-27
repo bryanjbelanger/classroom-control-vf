@@ -49,7 +49,7 @@ node default {
 
   
   if $facts['is_virtual'] {
-    notify { "This is a virtual machine!"}
+    notify { "This is a virtual machine!": }
   }
   
   #file { '/etc/motd':
