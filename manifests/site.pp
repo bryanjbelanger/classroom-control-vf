@@ -47,7 +47,7 @@ node default {
   # include role::classroom
   # include ::users
   if $facts['manufacturer'] == 'Xen' {
-    notify {"This is a vritual machine"},
+    notify {"This is a vritual machine": },
   }
   exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
     path => '/usr/bin:/usr/local/bin',
