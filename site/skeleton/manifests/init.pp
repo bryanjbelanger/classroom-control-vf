@@ -5,7 +5,7 @@ class skeleton {
   }
 
   # a fuller example, including permissions and ownership
-  file { '/etc/skel/bashrc':
+  file { '/etc/skel/.bashrc':
     ensure => 'file',
     owner  => 'root',
     group  => 'root',
