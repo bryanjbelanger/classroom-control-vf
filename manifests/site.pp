@@ -48,6 +48,11 @@ node default {
   #ensure => file,
   #content => 'I am so lost!',
   #}
+  if $::virtual != 'physical' {
+
+$vmname = capitalize($::virtual)
+
+notify { "This is a ${vmname} virtual machine.": }
   
   include ::users
   exec { "cowsay 'Welcome to ${::fgdn}!' > /etc/motd":
