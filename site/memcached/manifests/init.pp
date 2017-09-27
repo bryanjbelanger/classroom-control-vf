@@ -4,6 +4,13 @@ class memcached
   ensure => present,
   }
 
+file {'/etc/sysconfig':  
+ensure => directory,  
+owner => 'root',
+group => 'root',
+mode => '0775',
+} 
+
   file { '/etc/sysconfig/memcached':
   ensure => file,
   owner => 'root',
