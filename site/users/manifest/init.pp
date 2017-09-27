@@ -1,13 +1,28 @@
-class users {
+class aliases (
+$admin = 'root',
+) {
 
-user { 'fundamentals':
+# uses $admin to build the aliases file
 
-ensure => present,
+file { '/etc/aliases':
 
-# password => 'puppet8#labs', # Windows requires a plain text password
+ensure => file,
 
-# groups => ['Users'], # Display in Windows Control Panel
+owner => 'root',
+
+group => 'root',
+
+mode => '0644',
+
+content => epp('aliases/aliases.epp', { admin => $admin }),
 
 }
 
+exec { '/usr/bin/newaliases':
+
+refreshonly => true,
+
+subscribe => File['/etc/aliases'],
+
+}
 }
