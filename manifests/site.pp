@@ -19,6 +19,7 @@
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
 
+
 # Disable filebucket by default for all File resources:
 File { backup => false }
 
