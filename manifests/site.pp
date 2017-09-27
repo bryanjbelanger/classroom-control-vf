@@ -1,6 +1,6 @@
 ## site.pp ##
 
-# Eddie commit
+# Mike commit
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
@@ -41,25 +41,12 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-  #include ::users
-  include role::classroom
-  include ::skeleton
-  notify { "Hello, my name name is ${::hostname}": }
-  #file { '/etc/motd':
-  #  ensure => file,
-  #  owner => 'root',
-  #  group => 'root',
-  #  mode => '0644',
-  #  content => "Today I learned what it means to be a puppet.\n",
-  #}
-  exec { 'cowsay':
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motb",
-    path => '/usr/local/bin',
-    creates => '/etc/motd',
-  }
-    
-  
+# This is where you can declare classes for all nodes.
+# Example:
+# class { 'my_class': }
+if $::virtual != 'physical' {
+$vmname = capitalize($::virtual)
+notify { "This is a ${vmname} virtual machine.": }
 }
+}
+
