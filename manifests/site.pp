@@ -1,6 +1,7 @@
 ## site.pp ##
 
-# Here is a new comment
+# Mikes great Stuff
+
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
 #
@@ -44,11 +45,15 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  #file { '/etc/motd':
-  #ensure => file,
-  #content => 'I am so lost!',
-  #}
-  exec { "cowsay 'Welcome to ${::fgdn}!' > /etc/motd":
-    path => '/usr/local/bin',
+  
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+      path => '/usr/local/bin',
+      unless => '/usr/bin/test -f /etc/motd',
+  }
+  
+  file { '/etc/motd':
+      owner => root,
+      group => root,
+      mode => '0700',
   }
 }
