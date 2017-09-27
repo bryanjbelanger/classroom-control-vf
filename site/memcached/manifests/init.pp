@@ -2,7 +2,7 @@ class memcached{
   package { 'memcached':
     ensure => present,
   }
-  file { '/etc/sysconfig/memcached':
+  file { '/etc/sysconfig/memcached/memcached':
     ensure => file,
     owner => 'root',
     group => 'root',
