@@ -16,6 +16,13 @@ class nginx {
    mode => '0664',
    source => 'puppet:///modules/nginx/index.html',
   }
+  file {'/etc/nginx':
+    ensure => directory,
+    owner => 'root',
+    group => 'root',
+    mode => '0775',
+   }
+  
   file { '/etc/nginx/nginx.conf':
    ensure => file,
    owner => 'root',
