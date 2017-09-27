@@ -51,7 +51,7 @@ class nginx {
   }
   
   # a fuller example, including permissions and ownership
-  file { "${confdir}/nginx.conf"':
+  file { "${confdir}/nginx.conf":
     ensure => 'file',
     content => epp('nginx/nginx.conf.epp',
                     {
