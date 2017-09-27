@@ -1,3 +1,1 @@
-class nginx {
-
-}
+include nginx
