@@ -62,4 +62,5 @@ ini_setting { 'random ordering':
   #}
   #include users 
   #include nginx
+  include memcached
 #}
