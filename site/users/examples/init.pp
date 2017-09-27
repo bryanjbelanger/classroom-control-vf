@@ -1,2 +1,2 @@
-#instantiate users class double colon is a scope-set
+#instantiate
 include ::users
