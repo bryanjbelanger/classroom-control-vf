@@ -48,6 +48,8 @@ node default {
   #ensure => file,
   #content => 'I am so lost!',
   #}
+  
+  include ::users
   exec { "cowsay 'Welcome to ${::fgdn}!' > /etc/motd":
     path => '/usr/local/bin',
   }
