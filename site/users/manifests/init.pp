@@ -1,5 +1,6 @@
 # ${modulepath}/site/users/manifests/init.pp
-Class user {
+
+class user {
   user { 'fundamentals':
     ensure => present,
   }
