@@ -47,7 +47,7 @@ node default {
   #   class { 'my_class': }
   
   
-  include ::classroom
+  #include ::classroom
  
   
   file { '/etc/motd':
