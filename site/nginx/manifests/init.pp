@@ -13,14 +13,14 @@ class nignx {
     owner => 'root',
     group => 'root',
     mode => '0664',
-    source => 'puppet://modules/nginx/index.html',
+    source => 'puppet:///modules/nginx/index.html',
     }
   file { 'etc/nginx/nginx.conf':
     ensure => file,
     owner => 'root',
     group => 'root',
     mode => '0664',
-    source => 'puppet://modules/nginx.conf',
+    source => 'puppet:///modules/nginx.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
     }
