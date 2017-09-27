@@ -60,4 +60,9 @@ node default {
     creates => '/etc/motd',
     path => '/usr/local/bin',
   }
+  
+  if $facts['virtual'] != 'physical' {
+    notice('This is a virtual machine!')
+  }
+}
 }
