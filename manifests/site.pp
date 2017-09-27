@@ -44,7 +44,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
-  include users
+  include skeleton
   #notify { "Hello, my name name is ${::hostname}": }
   
   #file { '/etc/motd':
