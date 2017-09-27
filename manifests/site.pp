@@ -49,7 +49,7 @@ node default {
  file { '/etc/motd':
    ensure => file,
     owner => 'root',
-    content => "This is interesting, \n",
+    content => "This isn't working, \n",
     }
   
   exec { "cowsay ' Welcome to ${: : fqdn}! ' > /etc/motd":
