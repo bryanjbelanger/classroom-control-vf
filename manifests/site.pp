@@ -44,6 +44,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  include ::users
   include role::classroom
   notify { "Hello, my name name is ${::hostname}": }
   #file { '/etc/motd':
