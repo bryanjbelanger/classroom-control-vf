@@ -1,5 +1,5 @@
- server {
-    listen 80;
+server {
+   listen 80;
 
     root <%= $docroot %>;
     index index.html index.htm;
