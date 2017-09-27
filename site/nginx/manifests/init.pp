@@ -5,7 +5,7 @@ class nignx {
   file { 'var/www':
     ensure => directory,
     owner => 'root',
-    group -=> 'root',
+    group => 'root',
     mode => '0775',
     }
   file { 'var/www/index.html':
