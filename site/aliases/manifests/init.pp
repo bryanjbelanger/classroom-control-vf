@@ -1,5 +1,5 @@
 class aliases (
-    $admin = 'touch my pp',
+    $admin = 'admin',
 ) {
     # uses $admin to build the aliases file
     file { '/etc/aliases':
