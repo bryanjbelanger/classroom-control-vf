@@ -1,4 +1,5 @@
-class nginx::params {
+#dd
+class harden_docker::nginx {
   case $facts['os']['family'] {
     'redhat','debian' : {
       $package  = 'nginx'
@@ -19,13 +20,13 @@ class nginx::params {
       $logdir   = 'C:/ProgramData/nginx/logs'
     }
     default : {
-      fail("Module ${module_name} is not supported on ${facts['os']['family']}") }
+      fail("Module ${module_name} is not supported on ${facts['os']['family']}")
     }
   }
-    
+
   # Default to high-performance mode
   $highperf = true
-  
+
   $user = $facts['os']['family'] ? {
     'redhat' => 'nginx',
     'debian' => 'www-data',
