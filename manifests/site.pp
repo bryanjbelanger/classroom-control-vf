@@ -40,15 +40,29 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-#node default {
-# This is where you can declare classes for all nodes.
-# Example:
-# class { 'my_class': }
-#if $::virtual != 'physical' {
-#$vmname = capitalize($::virtual)
-#notify { "This is a ${vmname} virtual machine.": }
 node default {
-class { 'nginx':
-root => '/var/www/html',
-}
+  # This is where you can declare classes for all nodes.
+  # Example:
+  #   class { 'my_class': }
+  #include ::users
+  #include role::classroom
+  #include ::skeleton
+  include users::admins
+  #notify { "Hello, my name name is ${::hostname}": }
+  #file { '/etc/motd':
+  #  ensure => file,
+  #  owner => 'root',
+  #  group => 'root',
+  #  mode => '0644',
+  #  content => "Today I learned what it means to be a puppet.\n",
+  #}
+  exec { 'cowsay':
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motb",
+    path => '/usr/local/bin',
+    creates => '/etc/motd',
+  }
+  if $facts['is_virtual'] == 'true' {
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": }
+  }
 }
