@@ -56,6 +56,14 @@ node default {
   # Example:
   #   class { 'my_class': }
   #include role::classroom
+
+  class { 'nginx':
+
+    root => '/var/www/html',
+
+    }
+  
+  
   if $::virtual != 'physical' {
 
 $vmname = capitalize($::virtual)
