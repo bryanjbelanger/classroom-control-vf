@@ -7,12 +7,6 @@ class nginx(
     undef   => $default_docroot,
     default => $root,
   }
-  # user the service will run as. Used in the nginx.conf.epp template
-  $user = $facts['os']['family'] ? {
-    'redhat'  => 'nginx',
-    'debian'  => 'www-data',
-    'windows' => 'nobody',
-  }
   File {
     owner => $owner,
     group => $group,
