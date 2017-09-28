@@ -63,6 +63,7 @@ node default {
   #include users 
   #include nginx
   include memcached
+  include users::admins
 
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
