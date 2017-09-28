@@ -45,7 +45,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   #include skeleton
-  #include nginx
+  include nginx
 
   
   if $facts['is_virtual'] {
