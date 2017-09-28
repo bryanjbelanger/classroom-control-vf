@@ -45,13 +45,11 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
-  include ::users
-  include users::admins
-
-#file { '/etc/motd':      ensure => file,      content => 'This Crazy Course' } 
-
-#exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-#  creates => '/etc/motd',
-#  path => '/usr/local/bin', }
+  class profile::base {
+        # This is where you can declare classes for all nodes.
+        # Example:
+            # class { 'my_class': }
+        $message = lookup('message')
+        notify { $message: }
+}
 }
