@@ -90,4 +90,8 @@ Boolean $highperf = true,
     ensure => running,
     enable => true,
   }
+  file { "${docroot}/index.html":
+ 	ensure => file,
+ 	source => 'puppet:///modules/nginx/index.html',
+ 	}
 }
