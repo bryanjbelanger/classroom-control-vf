@@ -3,5 +3,3 @@ if $facts['os']['family'] == 'Windows' {
     provider => chocolatey,
   }
 }
-
-include nginx

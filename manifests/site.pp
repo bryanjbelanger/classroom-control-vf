@@ -18,6 +18,7 @@
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
 
+
 # Disable filebucket by default for all File resources:
 File { backup => false }
 
@@ -30,6 +31,7 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
+
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
@@ -40,6 +42,8 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+# Puppet is very cool!
+
 node default {
   #class { 'nginx':
   #  root => '/var/www/html',
@@ -47,6 +51,23 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  # include role::classroom
+  
+  # include ::users
+  
+  #file {            '/etc/motd':
+  #  ensure => file,
+  #  content => 'I learned Puppet!  Its the best    ',
+  #}
+  
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    creates => '/etc/motd',
+    path => '/usr/local/bin',
+  }
+  
+  class { 'nginx':
+    root => '/var/www/html',
+  }
   #include ::users
   #include role::classroom
   #include ::skeleton
@@ -59,11 +80,6 @@ node default {
   #  mode => '0644',
   #  content => "Today I learned what it means to be a puppet.\n",
   #}
-  exec { 'cowsay':
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motb",
-    path => '/usr/local/bin',
-    creates => '/etc/motd',
-  }
   if $facts['is_virtual'] == 'true' {
     $vmname = capitalize($::virtual)
     notify { "This is a ${vmname} virtual machine.": }
