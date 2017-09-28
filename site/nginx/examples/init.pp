@@ -1,3 +1,6 @@
-node default {
-    include nginx
+if $facts['os']['family'] == 'Windows' {
+    Package {
+      provider => chocolatey,
+    }
 }
+include nginx
