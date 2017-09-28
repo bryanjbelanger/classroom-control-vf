@@ -1,1 +1,3 @@
+node default {
 include nginx
+}
