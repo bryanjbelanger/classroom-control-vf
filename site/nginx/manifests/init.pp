@@ -17,10 +17,6 @@ mode => '0664',
 package { $package:
 ensure => present,
 }
-nginx::vhost { 'default':
-docroot => $docroot,
-servername => $facts['fqdn'],
-}
 file { "${docroot}/vhosts":
 ensure => directory,
 }
