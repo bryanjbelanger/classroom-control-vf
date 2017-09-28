@@ -1,2 +1,1 @@
 # Instantiate users
-include ::users

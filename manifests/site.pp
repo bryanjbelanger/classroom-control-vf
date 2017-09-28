@@ -1,5 +1,6 @@
 ## site.pp ##
 
+
 # Here is a new comment
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
@@ -68,4 +69,4 @@ node default {
   class { 'nginx':
     root => '/var/www/html',
   }
-}
+
