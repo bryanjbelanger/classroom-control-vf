@@ -49,7 +49,7 @@ node default {
 #		root => '/var/www/html',
 #	}
 
-	include nginx
+#	include nginx
 
 	# MOTD FILE
 	# Create a file with MOTD entry
