@@ -1,10 +1,11 @@
-class nginx {
+class nginx (String $root = '/var/www'
+            ){
   case $facts['os']['family'] {
     'redhat','debian' : {
       $package = 'nginx'
       $owner = 'root'
       $group = 'root'
-      $docroot = '/var/www'
+      $docroot = $root
       $confdir = '/etc/nginx'
       $logdir = '/var/log/nginx'
     }
