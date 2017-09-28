@@ -38,6 +38,7 @@ $user = $facts['os']['family'] ? {
 $docroot = $root ? {
 undef => $default_docroot, 
 default => $root,
+}
 File {
 owner => $owner, 
 group => $group, 
