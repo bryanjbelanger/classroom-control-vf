@@ -36,7 +36,6 @@ $user = $facts['os']['family'] ? {
 'windows' => 'nobody',
 }
 
-}
 # if $root isn't set, then fall back to the platform default
 $docroot = $root ? {
 undef => $default_docroot,
@@ -71,8 +70,8 @@ highperf => $highperf,
 require => Package[$package],
 notify => Service['nginx'],
 }
-service { 'nginx':
-ensure => running,
-enable => true,
-}
+  service { 'nginx':
+    ensure => running,
+    enable => true,
+  }
 }
