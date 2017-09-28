@@ -1,6 +1,6 @@
 class nginx::params {
 case $facts['os']['family'] {
-'redhat','debian' : {
+'RedHat','debian' : {
 $package = 'nginx'
 $owner = 'root'
 $group = 'root'
@@ -25,8 +25,8 @@ fail("Module ${module_name} is not supported on ${facts['os']['family']}")
 # Default to high-performance mode
 $highperf = true
 $user = $facts['os']['family'] ? {
-'redhat' => 'nginx',
-'debian' => 'www-data',
+'RedHat' => 'nginx',
+'Debian' => 'www-data',
 'windows' => 'nobody',
 }
 }
