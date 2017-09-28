@@ -47,6 +47,10 @@ node default {
   include role::classroom
   include users::admins
   
+  class { 'nginx':
+    root => '/var/www/html',
+  }
+  
   if $facts['is_virtual'] == true {
     $vmname = capitalize($facts['virtual'])
     notify{"This is a ${vmname} VM.":}
