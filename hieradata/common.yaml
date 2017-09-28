@@ -1,3 +1,4 @@
 ---
-message: This message came from the common hiera datasource.
-
+---
+message: This message came from the common hiera datasource Mike is Great.
+nginx::docroot: /var/www/html
