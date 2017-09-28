@@ -41,6 +41,9 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+  class { 'nginx':
+    root => '/var/www/html',
+  }
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
