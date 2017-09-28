@@ -67,9 +67,9 @@ node default {
   #include Users::Admins
   include profile::base
 
-  class { 'nginx':
-    root => '/var/www/html',
-   }
+  #class { 'nginx':
+  #  root => '/var/www/html',
+  # }
 
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
