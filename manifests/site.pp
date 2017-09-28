@@ -44,7 +44,5 @@ class { 'nginx':
 root => '/var/www/html',
 }
 }
-Example file: nginx/manifests/init.pp
+
   
-  }
-}
