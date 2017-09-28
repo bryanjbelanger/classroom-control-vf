@@ -1,6 +1,6 @@
 ## site.pp ##
 
-# Eddie commit
+# Another one bites the dust.
 
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
@@ -18,7 +18,6 @@
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
 
-
 # Disable filebucket by default for all File resources:
 File { backup => false }
 
@@ -31,7 +30,6 @@ ini_setting { 'random ordering':
   value   => 'title-hash',
 }
 
-
 # DEFAULT NODE
 # Node definitions in this file are merged with node data from the console. See
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
@@ -42,44 +40,35 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-# Puppet is very cool!
-
 node default {
-  #class { 'nginx':
-  #  root => '/var/www/html',
-  #}
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-  # include role::classroom
-  
-  # include ::users
-  
-  #file {            '/etc/motd':
-  #  ensure => file,
-  #  content => 'I learned Puppet!  Its the best    ',
-  #}
-  
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-    creates => '/etc/motd',
-    path => '/usr/local/bin',
-  }
-  
+	# This is where you can declare classes for all nodes.
+	# Example:
+	# class { 'my_class': }
 
-  #include ::users
-  #include role::classroom
-  #include ::skeleton
-  include users::admins
-  #notify { "Hello, my name name is ${::hostname}": }
-  #file { '/etc/motd':
-  #  ensure => file,
-  #  owner => 'root',
-  #  group => 'root',
-  #  mode => '0644',
-  #  content => "Today I learned what it means to be a puppet.\n",
-  #}
-  if $facts['is_virtual'] == 'true' {
-    $vmname = capitalize($::virtual)
-    notify { "This is a ${vmname} virtual machine.": }
-  }
+#	class { 'nginx':
+#		root => '/var/www/html',
+#	}
+
+#	include nginx
+
+	# MOTD FILE
+	# Create a file with MOTD entry
+	
+ 	file { '/etc/motd':
+ 		ensure => file,
+		owner => 'root',
+ 		group => 'root',
+ 		mode => '0644',
+ 		content => "Can a brotha get a table dance\n",
+ 	}
+	
+ 	exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+ 		creates => '/etc/motd',
+ 		path => '/usr/local/bin',
+	}
+	
+	if $::virtual != 'physical' {
+		$vmname = capitalize($::virtual)
+		notify { "This is a ${vmname} virtual machine.": }
+	}
 }
