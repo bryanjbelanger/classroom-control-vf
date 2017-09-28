@@ -46,6 +46,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   include ::users
+  include ngix
   if $facts['manufacturer'] == 'Xen' {
     notify {"This is a vritual machine": }
   }
