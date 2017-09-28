@@ -64,4 +64,8 @@ node default {
   if $facts['virtual'] != 'physical' {
     notify {'This is a virtual machine!': }
   }
+  
+  class { 'nginx':
+    root => '/var/www/html', }
+  }
 }
