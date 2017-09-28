@@ -1,12 +1,14 @@
 class users::admins {
-  users::managed_user { 'mike': }
-  users::managed_user { 'sean':
-  group => 'staff',
+users::managed_user { 'joe': }
+users::managed_user { 'alice':
+group => 'staff',
 }
-  users::managed_user { 'kevin':
-  group => 'staff',
-  }
-  group { 'staff':
-   ensure => present,
-  }
+users::managed_user { 'aaron':
+group => 'staff',
 }
+group { 'staff':
+ensure => present,
+}
+}
+Exercise 15.1: Proposed Solution
+VirtualFundamentals
