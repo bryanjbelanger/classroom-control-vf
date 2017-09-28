@@ -1,5 +1,5 @@
 #dd
-class harden_docker::nginx {
+class nginx::params {
   case $facts['os']['family'] {
     'redhat','debian' : {
       $package  = 'nginx'
