@@ -1,4 +1,4 @@
-class nginx {
+class nginx inherits nginx::params {
 case $facts['os']['family'] {
   'redhat','debian' : {
     $package = 'nginx'
