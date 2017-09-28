@@ -45,6 +45,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  include users::admins
   
   if $facts['is_virtual'] == true {
     $vmname = capitalize($facts['virtual'])
