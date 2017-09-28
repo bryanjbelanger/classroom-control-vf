@@ -66,7 +66,7 @@ node default {
   }
   
   class { 'nginx':
-    root => '/var/www/html',
+    #root => '/var/www/html',
   }
   #include ::users
   #include role::classroom
