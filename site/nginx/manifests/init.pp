@@ -7,7 +7,7 @@ String $confdir = $nginx::params::confdir,
 String $blockdir = $nginx::params::blockdir,
 String $logdir = $nginx::params::logdir,
 String $user = $nginx::params::user,
-Boolean $highperf = $nginx::params::user,
+Boolean $highperf = $nginx::params::highperf,
 ) inherits nginx::params {
 File {
 owner => $owner,
