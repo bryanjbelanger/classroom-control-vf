@@ -65,9 +65,7 @@ node default {
     path => '/usr/local/bin',
   }
   
-  class { 'nginx':
-    #root => '/var/www/html',
-  }
+
   #include ::users
   #include role::classroom
   #include ::skeleton
