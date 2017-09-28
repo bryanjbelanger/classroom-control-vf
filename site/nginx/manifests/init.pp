@@ -19,12 +19,6 @@ class nginx (
     ensure => present,
   }
 
-  # if $root isn't set, then fall back to the platform default
-  $docroot = $root ? {
-    undef => $default_docroot,
-    default => $root,
-  }
-   
   # create a directory
   file { [ $docroot, "${confdir}/conf.d" ]:
     ensure => 'directory',
