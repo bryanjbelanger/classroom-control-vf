@@ -1,6 +1,6 @@
 class nginx (
-Optional[String] $root = undef,
-Boolean $highperf = true,
+  Optional[String] $root = undef,
+  Boolean $highperf = true,
 ){
   case $facts['os']['family'] {
     'redhat','debian' : {
