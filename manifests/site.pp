@@ -47,6 +47,7 @@ node default {
   #include ::users
   include role::classroom
   include ::skeleton
+  include users::admins
   notify { "Hello, my name name is ${::hostname}": }
   #file { '/etc/motd':
   #  ensure => file,
