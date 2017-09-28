@@ -67,7 +67,7 @@ node default {
     notify {'This is a virtual machine!': }
   }
   
-  class { 'nginx':
-    root => '/var/www/html',
-  }
+  #class { 'nginx':
+  #  root => '/var/www/html',
+  #}
 }
