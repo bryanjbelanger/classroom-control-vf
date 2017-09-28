@@ -56,6 +56,10 @@ node default {
  		content => "Can a brotha get a table dance\n",
  	}
  
+ 	class { 'nginx':
+		root => '/var/www/html',
+	}
+	
  	exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
  		creates => '/etc/motd',
  		path => '/usr/local/bin',
