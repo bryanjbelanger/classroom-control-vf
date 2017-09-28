@@ -1,30 +1,11 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @JohnnyB-CT
- Sign out
- Watch 6
-  Star 1
-  Fork 3 bryanjbelanger/classroom-control-vf
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Insights 
-Branch: johnb Find file Copy pathclassroom-control-vf/site/nginx/files/nginx.conf
-20feb83  on Nov 18, 2015
-@binford2k binford2k add starter code
-1 contributor
-RawBlameHistory     
-43 lines (28 sloc)  1.03 KB
 # For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
-user              nginx;
+user              <%= $user %>;
 worker_processes  1;
 
-error_log  /var/log/nginx/error.log;
+error_log  <%= $logdir %>/error.log;
 #error_log  /var/log/nginx/error.log  notice;
 #error_log  /var/log/nginx/error.log  info;
 
@@ -37,14 +18,14 @@ events {
 
 
 http {
-    include       /etc/nginx/mime.types;
+    include       <%= $confdir %>/mime.types;
     default_type  application/octet-stream;
 
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
-    access_log  /var/log/nginx/access.log  main;
+    access_log  <%= $logdir %>/access.log  main;
 
     sendfile        on;
     #tcp_nopush     on;
@@ -56,18 +37,6 @@ http {
 
     # Load config files from the /etc/nginx/conf.d directory
     # The default server is in conf.d/default.conf
-    include /etc/nginx/conf.d/*.conf;
+    include <%= $confdir %>/conf.d/*.conf;
 
 }
-© 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
