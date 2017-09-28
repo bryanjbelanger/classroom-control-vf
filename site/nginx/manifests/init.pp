@@ -1,47 +1,14 @@
 class nginx (
-Optional[String] $root = '/var/www/html',
-Boolean $highperf = true,
-
-) {
-case $facts['os']['family'] {
-'redhat','debian' : {
-$package = 'nginx'
-$owner = 'root'
-$group = 'root'
-# $docroot = '/var/www'
-$confdir = '/etc/nginx'
-$blockdir = '/etc/nginx/conf.d'
-$logdir = '/var/log/nginx'
-# this will be used if we don't pass in a value
-$default_docroot = '/var/www'
-}
-'windows' : {
-$package = 'nginx-service'
-$owner = 'Administrator'
-$group = 'Administrators'
-# $docroot = 'C:/ProgramData/nginx/html'
-$confdir = 'C:/ProgramData/nginx'
-$blockdir = 'C:/ProgramData/nginx/conf.d'
-$logdir = 'C:/ProgramData/nginx/logs'
-# this will be used if we don't pass in a value
-$default_docroot = 'C:/ProgramData/nginx/html'
-}
-default : {
-fail("Module ${module_name} is not supported on ${facts['os']['family']}")
-}
-}
-# user the service will run as. Used in the nginx.conf.epp template
-$user = $facts['os']['family'] ? {
-'redhat' => 'nginx',
-'debian' => 'www-data',
-'windows' => 'nobody',
-}
-
-# if $root isn't set, then fall back to the platform default
-$docroot = $root ? {
-undef => $default_docroot,
-default => $root,
-}
+String $package = $nginx::params::package,
+String $owner = $nginx::params::owner,
+String $group = $nginx::params::group,
+String $docroot = $nginx::params::docroot,
+String $confdir = $nginx::params::confdir,
+String $blockdir = $nginx::params::blockdir,
+String $logdir = $nginx::params::logdir,
+String $user = $nginx::params::user,
+Boolean $highperf = $nginx::params::highperf,
+) inherits nginx::params {
 File {
 owner => $owner,
 group => $group,
@@ -50,7 +17,6 @@ mode => '0664',
 package { $package:
 ensure => present,
 }
-# docroot is either passed in or a default value
 nginx::vhost { 'default':
 docroot => $docroot,
 servername => $facts['fqdn'],
