@@ -67,15 +67,14 @@ node default {
   #include Users::Admins
   include profile::base
 
+  class { 'nginx':
+    root => '/var/www/html',
+   }
+
   node default {
 
-class { 'nginx':
 
-root => '/var/www/html',
-
-}
-
-}
+  }
 
 
   if $::virtual != 'physical' {
