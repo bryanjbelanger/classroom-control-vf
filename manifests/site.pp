@@ -45,10 +45,10 @@ node default {
   # Example:
   #   class { 'my_class': }
   #include ::users
-  include role::classroom
-  include ::skeleton
+  #include role::classroom
+  #include ::skeleton
   include users::admins
-  notify { "Hello, my name name is ${::hostname}": }
+  #notify { "Hello, my name name is ${::hostname}": }
   #file { '/etc/motd':
   #  ensure => file,
   #  owner => 'root',
