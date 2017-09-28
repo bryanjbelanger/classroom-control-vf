@@ -53,13 +53,7 @@ Boolean $highperf = true,
   package { $package:
     ensure => present,
   }
-  
-  # docroot is either passed in or a default value
-  nginx::vhost { 'default':
-    docroot => $docroot,
-    servername => $facts['fqdn'],
-  }
-  
+    
   # create a directory
   file { [ $docroot, "${confdir}/conf.d" ]:
     ensure => 'directory',
