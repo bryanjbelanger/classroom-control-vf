@@ -1,27 +1,19 @@
 class nginx (
-##  Optional[String] $root = undef,
-##  Boolean $highperf = true,
-##  ) {
-##  case $facts['os']['family'] {
-##    'redhat','debian' : {
-##      $package = 'nginx'
-      $package = $nginx::params::package,
-##      $owner = 'root'
-      $owner =  = $nginx::params::owner,
-##      $group = 'root'
-      $group = $nginx::params::group,
+  Optional[String] $root = undef,
+  Boolean $highperf = true,
+  ) {
+  case $facts['os']['family'] {
+    'redhat','debian' : {
+      $package = 'nginx'
+      $owner = 'root'
+      $group = 'root'
 #     $docroot = '/var/www'
-##      $confdir = '/etc/nginx'
-      $confdir = $nginx::params::confdir,
-##      $blockdir = '/etc/nginx/conf.d'
-###      $blockdir = $nginx::params::blockdir,
-##      $logdir = '/var/log/nginx'
-      $logdir = $nginx::params::logdir,
-      
-      $port = $nginx::params::port
-      
+      $confdir = '/etc/nginx'
+      $blockdir = '/etc/nginx/conf.d'
+      $logdir = '/var/log/nginx'
+
       # this will be used if we don't pass in a value
-##      $default_docroot = '/var/www'
+      $default_docroot = '/var/www'
     }
     'windows' : {
       $package = 'nginx-service'
