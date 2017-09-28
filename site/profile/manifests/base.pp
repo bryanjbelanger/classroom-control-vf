@@ -1,4 +1,5 @@
 class profile::base {
   #notify { "Hello, my name is ${::hostname}": }
-  notify { lookup($message): }
+  $message = lookup('message')
+  notify { $message: }
 }
