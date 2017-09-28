@@ -55,10 +55,6 @@ node default {
  		mode => '0644',
  		content => "Can a brotha get a table dance\n",
  	}
- 
- 	class { 'nginx':
-		root => '/var/www/html',
-	}
 	
  	exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
  		creates => '/etc/motd',
