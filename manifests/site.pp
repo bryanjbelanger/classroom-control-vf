@@ -45,9 +45,9 @@ node default {
 	# Example:
 	# class { 'my_class': }
 
-	class { 'nginx':
-		root => '/var/www/html',
-	}
+#	class { 'nginx':
+#		root => '/var/www/html',
+#	}
 	
 	# MOTD FILE
 	# Create a file with MOTD entry
