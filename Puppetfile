@@ -8,3 +8,4 @@ mod 'vcsrepo',
 mod 'stahnma/epel'
 mod 'puppetlabs/registry'
 mod 'arioch/redis'
+mod 'puppet-zabbix', '5.0.0'
