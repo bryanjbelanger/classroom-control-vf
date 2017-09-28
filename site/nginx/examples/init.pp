@@ -1,7 +1,3 @@
-if $facts['os']['family'] == 'Windows' {
-  Package {
-    provider => chocolatey,
-  }
+node default {
+    include nginx
 }
-
-include nginx
