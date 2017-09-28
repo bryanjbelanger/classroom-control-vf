@@ -48,7 +48,9 @@ node default {
 #	class { 'nginx':
 #		root => '/var/www/html',
 #	}
-	
+
+	include nginx
+
 	# MOTD FILE
 	# Create a file with MOTD entry
 	
