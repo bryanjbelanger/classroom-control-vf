@@ -47,8 +47,6 @@ node default {
 	
 	# MOTD FILE
 	# Create a file with MOTD entry
-
-	include ::users
 	
  	file { '/etc/motd':
  		ensure => file,
