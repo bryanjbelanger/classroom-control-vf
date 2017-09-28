@@ -57,11 +57,11 @@ node default {
   #   class { 'my_class': }
   #include role::classroom
 
-  class { 'nginx':
-
-    root => '/var/www/html',
-
-    }
+ #class { 'nginx':
+#
+ #   root => '/var/www/html',
+#
+ #   }
   
   
   if $::virtual != 'physical' {
