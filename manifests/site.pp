@@ -41,6 +41,17 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+  class { 'apache':
+    mpm_module => 'prefork',
+  }
+  include apache::mod::php
+
+  class { 'mysql::server': }
+
+  class { 'zabbix':
+    zabbix_url    => 'zabbix.example.com',
+    database_type => 'mysql',
+  }
   #class { 'nginx':
   #  root => '/var/www/html',
   #}
