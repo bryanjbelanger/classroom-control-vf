@@ -60,7 +60,7 @@ Boolean $highperf = true,
   }
   
   # ensure index.html exists
-  file { '/var/www/index.html':
+  file { "${docroot}/index.html":
     ensure => 'file',
     source => 'puppet:///modules/nginx/index.html',
   }
