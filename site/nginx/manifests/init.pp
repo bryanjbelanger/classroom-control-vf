@@ -18,13 +18,6 @@ class nginx (
   package { $package:
     ensure => present,
   }
-  
-  # user the service will run as. Used in the nginx.conf.epp template
-  $user = $facts['os']['family'] ? {
-    'redhat' => 'nginx',
-    'debian' => 'www-data',
-    'windows' => 'nobody',
-  }
 
   # if $root isn't set, then fall back to the platform default
   $docroot = $root ? {
