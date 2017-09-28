@@ -26,3 +26,4 @@ class nginx::params {
       fail("Module ${module_name} is not supported on ${facts['os']['family']}")
     }
   }
+}
