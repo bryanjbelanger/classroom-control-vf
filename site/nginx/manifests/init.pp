@@ -21,6 +21,11 @@ class nginx (
      $logdir = 'C:/ProgramData/nginx/logs'
      $default_docroot = 'C:/ProgramData/nginx/html'
   }
+  #if $root isn't set, then fall back to the platform default
+  $docroot = $root ? {
+    undef => $default_docroot, 
+    default => $root,
+  }
   default : {
       fail("Module ${module_name} is not supported on ${facts['os']['family']}") 
    }
