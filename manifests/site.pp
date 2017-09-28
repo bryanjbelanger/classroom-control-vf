@@ -1,5 +1,8 @@
 ## site.pp ##
 
+
+# Here is a new comment
+
 # This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
 #
@@ -15,6 +18,7 @@
 # This configures puppet agent and puppet inspect to back up file contents when
 # they run. The Puppet Enterprise console needs this to display file contents
 # and differences.
+
 
 # Disable filebucket by default for all File resources:
 File { backup => false }
@@ -39,23 +43,30 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+# Puppet is very cool!
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  include role::classroom
-  #include skeleton
-  #include nginx
-
+  # include role::classroom
   
-  if $facts['is_virtual'] {
-    notify { "This is a virtual machine!": }
+  # include ::users
+  
+  #file {            '/etc/motd':
+  #  ensure => file,
+  #  content => 'I learned Puppet!  Its the best    ',
+  #}
+  
+  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+    creates => '/etc/motd',
+    path => '/usr/local/bin',
   }
   
-  #file { '/etc/motd':
-  #  ensure => file,
-  #  owner => 'root',
-  #  content => "I NEED A HERO!!!\n",
-  #}
-
-}
+  if $facts['virtual'] != 'physical' {
+    notify {'This is a virtual machine!': }
+  }
+  
+  class { 'nginx':
+    root => '/var/www/html',
+  }

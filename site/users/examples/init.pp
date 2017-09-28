@@ -1,3 +1,2 @@
-class site::users {
-  include ::users
-}
+# Instantiate users
+

@@ -1,2 +1,2 @@
+include ::skeleton
 
-include skeleton
