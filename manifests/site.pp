@@ -48,7 +48,6 @@ node default {
   include users::admins
   
   class { 'nginx':
-    root => '/var/www/html',
   }
   
   if $facts['is_virtual'] == true {
