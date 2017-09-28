@@ -65,6 +65,7 @@ node default {
   include memcached
   #include Users::Managed_user
   #include Users::Admins
+  include profile::base
 
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
