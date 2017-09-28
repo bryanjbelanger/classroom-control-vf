@@ -10,5 +10,3 @@ group { 'staff':
 ensure => present,
 }
 }
-Exercise 15.1: Proposed Solution
-VirtualFundamentals
