@@ -1,5 +1,5 @@
 #Docu
-class harden_docker::nginx(
+class nginx(
   Optional[String] $root = undef,
 ) {
   case $facts['os']['family'] {
