@@ -1,13 +1,13 @@
 class nginx(
-  String $package = $nginx::params::package,
-  String $owner = $nginx::params::owner,
-  String $group = $nginx::params::group,
-  String $docroot = $nginx::params::docroot,
-  String $confdir = $nginx::params::confdir,
-  String $blockdir = $nginx::params::blockdir,
-  String $logdir = $nginx::params::logdir,
-  String $user = $nginx::params::user,
-  Boolean $highperf = $nginx::params::highperf,
+  String $package = $::nginx::params::package,
+  String $owner = $::nginx::params::owner,
+  String $group = $::nginx::params::group,
+  String $docroot = $::nginx::params::docroot,
+  String $confdir = $::nginx::params::confdir,
+  String $blockdir = $::nginx::params::blockdir,
+  String $logdir = $::nginx::params::logdir,
+  String $user = $::nginx::params::user,
+  Boolean $highperf = $::nginx::params::highperf,
 ) {
   File {
     owner => $owner,
