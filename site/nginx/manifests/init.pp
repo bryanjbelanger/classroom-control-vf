@@ -33,6 +33,7 @@ $user = $facts['os']['family'] ? {
 'redhat' => 'nginx',
 'debian' => 'www-data', 
 'windows' => 'nobody',
+}
 # if $root isn't set, then fall back to the platform default
 $docroot = $root ? {
 undef => $default_docroot, 
